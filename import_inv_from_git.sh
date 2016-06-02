@@ -15,6 +15,7 @@ for STATION in ${LINE}; do
 	seiscomp exec import_inv fdsnxml ${INV_PATH}/${STATION}.StationXML;
 	echo '# Binding references
     scautopick:autopick
+    slarchive:slarchive
     seedlink:seedlink' > ${KEY_PATH}/station_${STATION};
 done;
 seiscomp update-config inventory;
